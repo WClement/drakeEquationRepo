@@ -1,7 +1,18 @@
 package model.manager;
 
-public interface Manager {
+import gameLogic.GameState;
 
-	public void manage();
+public abstract class Manager {
+
+	private GameState myGame;
+	
+	
+	public Manager(GameState myGame) {
+		this.myGame = myGame;
+	}
+	
+	public abstract void manage();
+	
+	
 	
 }

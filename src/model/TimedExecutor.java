@@ -36,9 +36,7 @@ public class TimedExecutor implements Runnable {
 			double delta = updateLength / ((double)OPTIMAL_TIME);
 			
 			doGameUpdates(delta);
-			
-			//render();
-//			myGame.getView().update();
+
 			
 			try {
 				long temp = (lastLoopTime-System.nanoTime() + OPTIMAL_TIME)/1000000;
@@ -52,9 +50,8 @@ public class TimedExecutor implements Runnable {
 		}
 	}
 	
-//	int buildCounter = 600;
-	int kappaCounter = 30;
-	
+
 	private void doGameUpdates(double delta) {
+		myGame.manageManagers();
 	}
 }
