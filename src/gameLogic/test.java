@@ -1,31 +1,40 @@
 package gameLogic;
 
+/*import Elements2000K;
+import Elements300K;
+import Elements50K;
+import Planet;
+import PlanetFactory;
+import Star;
+import StarFactory;*/
+
 public class test {
 		public static void main(String[] args){
-			Planet closePlanet = PlanetFactory.thePlanet("2000K");
-			closePlanet.makePlanet();
-			Planet midPlanet = PlanetFactory.thePlanet("300K");
-			midPlanet.makePlanet();
-			Planet farPlanet = PlanetFactory.thePlanet("50K");
-			farPlanet.makePlanet();
+			Star firstStar = StarFactory.theStar();
+			firstStar.makeStar(100);
 			
-			System.out.println("close planet atmosphere: " + closePlanet.atmosphere);
-			System.out.print("close planet contains ");
-			for(Elements2000K ele2000: closePlanet.elements2000){
-				System.out.print(ele2000 + " ");
+			System.out.println("First star is called : " + firstStar.name + " and is size " + firstStar.size);
+			System.out.print(firstStar.name + " has the planets ");
+			for(Planet planets : firstStar.solarSystem){
+				System.out.println(planets.name + " ");
+				System.out.println(planets.name + "'s atmosphere is " + planets.atmosphere);
+				System.out.print(planets.name + " contains ");
+				if(planets.elements2000 != null){
+					for(Elements2000K ele2000: planets.elements2000){
+						System.out.print(ele2000 + " ");
+					}
+				}
+				else if(planets.elements300 != null){
+					for(Elements300K ele300: planets.elements300){
+						System.out.print(ele300 + " ");
+					}
+				}
+				else if(planets.elements50 != null){
+					for(Elements50K ele50: planets.elements50){
+						System.out.print(ele50 + " ");
+					}
+				}
+				System.out.println();
 			}
-			System.out.println();
-			System.out.println("midplanet atmosphere: " + midPlanet.atmosphere);
-			System.out.print("mid planet contains ");
-			for(Elements300K ele300: midPlanet.elements300){
-				System.out.print(ele300 + " ");
-			}
-			System.out.println();
-			System.out.println("far planet atmosphere: " + farPlanet.atmosphere);
-			System.out.print("far planet contains ");
-			for(Elements50K ele50: farPlanet.elements50){
-				System.out.print(ele50 + " ");
-			}
-			System.out.println();
 		}
 }

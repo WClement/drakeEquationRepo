@@ -11,6 +11,6 @@ public abstract class Planet {
 	protected boolean discovered;
 	protected boolean colonized;
 	
-	abstract public Planet makePlanet();
+	abstract public Planet makePlanet(String starName);
 	
 }
