@@ -24,7 +24,7 @@ public class PlanetFactory {
 class farPlanet extends Planet{
 
 	@Override
-	public Planet makePlanet() {
+	public Planet makePlanet(String starName) {
 		this.elements300 = null;
 		this.elements2000 = null;
 		this.elements50 = getElements();
@@ -50,7 +50,7 @@ class farPlanet extends Planet{
 class midPlanet extends Planet{
 
 	@Override
-	public Planet makePlanet() {
+	public Planet makePlanet(String starName) {
 		this.elements300 = getElements();
 		this.elements2000 = null;
 		this.elements50 = null;
@@ -75,7 +75,7 @@ class midPlanet extends Planet{
 class closePlanet extends Planet{
 
 	@Override
-	public Planet makePlanet() {
+	public Planet makePlanet(String starName) {
 		this.elements300 = null;
 		this.elements2000 = getElements();
 		this.elements50 = null;
