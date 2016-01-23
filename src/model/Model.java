@@ -59,9 +59,19 @@ public class Model {
 		}
 	}
 
-	public void receiveCommand(ChatCommand commandToSend) {
+	public void receiveCommand(ChatCommand cmd) {
 		// TODO Auto-generated method stub
-		System.out.println("Model received command: " + commandToSend.getSuffix());
+		System.out.println("Model received command: " + cmd.getSuffix());
+		
+		switch (cmd.getMyEnum()) {
+
+		case BUILD:
+			//buildManager.executeCommand(cmd);
+			break;
+
+		default:
+			break;
+		}
 	}
 	
 	
