@@ -18,5 +18,7 @@ public class Main {
 		// link up MVC
 		theController.setModel(theModel);
 		theModel.setController(theController);
+		
+		theController.start();
 	}
 }

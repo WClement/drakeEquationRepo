@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import model.manager.Manager;
 import controller.Controller;
+import controller.command.ChatCommand;
 
 /*
  * Model.class
@@ -56,6 +57,11 @@ public class Model {
 		for (Manager manager : managers) {
 			manager.manage();
 		}
+	}
+
+	public void receiveCommand(ChatCommand commandToSend) {
+		// TODO Auto-generated method stub
+		System.out.println("Model received command: " + commandToSend.getSuffix());
 	}
 	
 	
