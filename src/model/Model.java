@@ -70,6 +70,8 @@ public class Model {
 			break;
 		case GENERAL:
 			break;
+		case PLANET:
+			break;
 		default:
 			break;
 		}
