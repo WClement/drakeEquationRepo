@@ -1,6 +1,6 @@
 package gameLogic;
 
-import model.manager.PlanetManager;
+import model.manager.CelestialObjectManager;
 
 /*import Elements2000K;
 import Elements300K;
@@ -12,7 +12,7 @@ import StarFactory;*/
 
 public class test {
 		public static void main(String[] args){
-			PlanetManager game = new PlanetManager(null);
+			CelestialObjectManager game = new CelestialObjectManager(null);
 			game.createGalaxy();
 		}
 }

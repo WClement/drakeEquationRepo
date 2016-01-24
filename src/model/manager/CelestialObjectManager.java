@@ -12,7 +12,7 @@ import gameLogic.PlanetFactory;
 import gameLogic.Star;
 import gameLogic.StarFactory;
 
-public class PlanetManager extends Manager {
+public class CelestialObjectManager extends Manager {
 
 	private PlanetFactory planetFactory;
 	private StarFactory starFactory = new StarFactory();
@@ -22,7 +22,7 @@ public class PlanetManager extends Manager {
 	 * All managers hold a ref to the gameState
 	 * managers will update the gameState
 	 */
-	public PlanetManager(GameState myGame) {
+	public CelestialObjectManager(GameState myGame) {
 		super(myGame);
 		// TODO Auto-generated constructor stub
 	}
