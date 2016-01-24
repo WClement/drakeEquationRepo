@@ -49,7 +49,7 @@ public class CelestialObjectManager extends Manager {
 		int rand;
 		double random;
 		for(StarNames names : galaxy){
-			random = Math.random();;
+			random = Math.random();
 			rand = (int)(random * 101);
 			if(rand < 10){
 				rand = 10;
