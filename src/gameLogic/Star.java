@@ -3,13 +3,22 @@ package gameLogic;
 import java.util.ArrayList;
 
 public class Star {
+	
+	private final int MAX_TRACKS = 8;
+	
 	private String name;
 	private int size;
 	private ArrayList<Planet> solarSystem = new ArrayList<Planet>();
+	private Track[] tracks;
+	
+	public Star() {
+		tracks = new Track[MAX_TRACKS];
+	}
 	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}

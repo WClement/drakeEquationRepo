@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import model.manager.CelestialObjectManager;
 import model.manager.Manager;
+import model.manager.NavigationManager;
 import controller.Controller;
 import controller.command.ChatCommand;
 
@@ -27,14 +28,21 @@ public class Model {
 	private ArrayList<Manager> managers;
 	
 	CelestialObjectManager celestObjMgr;
+	NavigationManager navigationManager;
 	
 	public Model() {
 		// TODO Auto-generated constructor stub
 		modelLoop = new TimedExecutor(this);
+		theGame = new GameState();
 		
 		managers = new ArrayList<Manager>();
 		celestObjMgr = new CelestialObjectManager(theGame);
 		managers.add(celestObjMgr);
+		
+		navigationManager = new NavigationManager(theGame);
+		managers.add(navigationManager);
+		
+		celestObjMgr.createGalaxy();
 		
 		
 		//modelLoop.start();
@@ -98,7 +106,8 @@ public class Model {
 			celestObjMgr.addPlanet();
 			break;
 		case NAVIGATE: // specify navigation
-			
+			System.out.println("Navigate in case statement");
+			navigationManager.moveShipToNext();
 			break;
 		case YES1:
 		case YES2:

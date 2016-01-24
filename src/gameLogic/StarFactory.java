@@ -3,7 +3,7 @@ package gameLogic;
 import java.util.ArrayList;
 
 public class StarFactory {
-	public Star theStar(int size, String name){
+	public Star newStar(int size, String name){
 		Star newStar = new Star();
 		newStar.setSize(size);
 		newStar.setName(name);

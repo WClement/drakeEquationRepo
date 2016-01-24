@@ -54,7 +54,7 @@ public class CelestialObjectManager extends Manager {
 			if(rand < 10){
 				rand = 10;
 			}
-			starFactory.theStar(rand, names.toString());
+			this.myGame.addStar(starFactory.newStar(rand, names.toString()));
 		}
 	}
 

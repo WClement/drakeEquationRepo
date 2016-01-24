@@ -5,7 +5,7 @@ import gameLogic.GameState;
 
 public abstract class Manager {
 
-	private GameState myGame;
+	GameState myGame;
 	
 	
 	public Manager(GameState myGame) {
