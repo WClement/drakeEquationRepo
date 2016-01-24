@@ -7,6 +7,7 @@ public abstract class Skills {
 	private boolean active;
 	private boolean passive;
 	private ResourceArrayWrapper cost = new ResourceArrayWrapper();
+	private int cooldownTime;
 	
 	public boolean isActive() {
 		return active;
@@ -33,6 +34,12 @@ public abstract class Skills {
 	}
 	public void setType(ResearchType type) {
 		this.type = type;
+	}
+	public int getCooldownTime() {
+		return cooldownTime;
+	}
+	public void setCooldownTime(int cooldownTime) {
+		this.cooldownTime = cooldownTime;
 	}
 	
 }
