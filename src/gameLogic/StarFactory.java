@@ -2,24 +2,20 @@ package gameLogic;
 
 import java.util.ArrayList;
 
-abstract class StarFactory {
-	public static Star theStar(){
-		Star star = new makeStar();
-		return star;
+public class StarFactory {
+	public Star theStar(int size, String name){
+		Star newStar = new Star();
+		newStar.setSize(size);
+		newStar.setName(name);
+		newStar.setSolarSystem(makeSolarSystem(size, name));
+		System.out.println("Star " + name + " of size " + size + " contains " + size/10 + " planets:");
+		for(Planet planets : newStar.getSolarSystem()){
+			System.out.print(planets.name + " ");
+		}
+		System.out.println("\n");
+		return newStar;
 	}
-}
-class makeStar extends Star{
-
-	@Override
-	public Star makeStar(int size) {
-		this.size = size;
-		this.name = "Ceres";
-		this.solarSystem = getSolarSystem(size, this.name);
-		return null;
-	}
-	
-	@Override
-	public ArrayList<Planet> getSolarSystem(int size, String name) {	
+	public ArrayList<Planet> makeSolarSystem(int size, String name) {	
 		ArrayList<Planet> solarSystem = new ArrayList<Planet>();
 		char planetName = 'A';
 		for(int i = 0; i < size/10; i++){
@@ -46,5 +42,5 @@ class makeStar extends Star{
 			}
 		}
 		return solarSystem;
-	}	
+	}
 }

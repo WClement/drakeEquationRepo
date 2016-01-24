@@ -2,11 +2,27 @@ package gameLogic;
 
 import java.util.ArrayList;
 
-abstract class Star {
-	protected String name;
-	protected int size;
-	protected ArrayList<Planet> solarSystem = new ArrayList<Planet>();
+public class Star {
+	private String name;
+	private int size;
+	private ArrayList<Planet> solarSystem = new ArrayList<Planet>();
 	
-	abstract public ArrayList<Planet> getSolarSystem(int size, String name);
-	abstract public Star makeStar(int size);
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getSize() {
+		return size;
+	}
+	public void setSize(int size) {
+		this.size = size;
+	}
+	public ArrayList<Planet> getSolarSystem() {
+		return solarSystem;
+	}
+	public void setSolarSystem(ArrayList<Planet> solarSystem) {
+		this.solarSystem = solarSystem;
+	}
 }
