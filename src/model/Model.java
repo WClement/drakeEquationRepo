@@ -43,7 +43,7 @@ public class Model {
 	}
 	
 	/*
-	 * setController()
+	 * setController(Controller myController)
 	 * 
 	 * hooks up our controller to model
 	 */
@@ -69,6 +69,19 @@ public class Model {
 		}
 	}
 
+	/*
+	 * receiveCommand(ChatCommand cmd)
+	 * 
+	 * PURPOSE:
+	 * Receive ChatCommand objects from controller
+	 * 
+	 * THIS CALLS:
+	 * Managers depending on switch statement
+	 * 
+	 * CALLED BY:
+	 * Controller
+	 * 
+	 */
 	public void receiveCommand(ChatCommand cmd) {
 		// TODO Auto-generated method stub
 		System.out.println("Model.receiveCommand: " + cmd.getClass().toString());
@@ -79,11 +92,13 @@ public class Model {
 			//buildManager.executeCommand(cmd);
 			break;
 		case GENERAL:
+			// general use testing enum
 			break;
 		case PLANET:
 			celestObjMgr.addPlanet();
 			break;
-		case NAVIGATE:
+		case NAVIGATE: // specify navigation
+			
 			break;
 		case YES1:
 		case YES2:
