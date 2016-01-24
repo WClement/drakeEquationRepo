@@ -17,7 +17,7 @@ public enum CommandEnum {
 	/*~~~~~~~~~Defined Enums~~~~~~~~~*/
 	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 	BUILD ("B:", BuildCommand.class),
-	CHAT ("", GenericCommand.class);
+	GENERAL ("G:", GenericCommand.class);
 	
 	
 	

@@ -68,7 +68,8 @@ public class Model {
 		case BUILD:
 			//buildManager.executeCommand(cmd);
 			break;
-
+		case GENERAL:
+			break;
 		default:
 			break;
 		}
