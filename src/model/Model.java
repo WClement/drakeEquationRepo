@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import model.manager.Manager;
 import controller.Controller;
+import controller.command.ChatCommand;
 
 /*
  * Model.class
@@ -55,6 +56,21 @@ public class Model {
 	public void manageManagers() {
 		for (Manager manager : managers) {
 			manager.manage();
+		}
+	}
+
+	public void receiveCommand(ChatCommand cmd) {
+		// TODO Auto-generated method stub
+		System.out.println("Model received command: " + cmd.getSuffix());
+		
+		switch (cmd.getMyEnum()) {
+
+		case BUILD:
+			//buildManager.executeCommand(cmd);
+			break;
+
+		default:
+			break;
 		}
 	}
 	
