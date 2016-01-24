@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
 
+import controller.command.ChatCommand;
+import controller.command.PlanetCommand;
 import gameLogic.Atmosphere;
 import gameLogic.Elements2000K;
 import gameLogic.GameState;
@@ -32,8 +34,13 @@ public class CelestialObjectManager extends Manager {
 		// TODO Auto-generated method stub
 	}
 	
+	public void addStar() {
+		System.out.println("CelestialObjectManager: addStar() called");
+	}
+	
 	public void addPlanet(){
 		//myGame.addPlanet(planetFactory.newPlanet(INFO))
+		System.out.println("CelestialObjectManager: addPlanet() called");
 	}
 	
 	public void createGalaxy() {
@@ -48,6 +55,15 @@ public class CelestialObjectManager extends Manager {
 				rand = 10;
 			}
 			starFactory.theStar(rand, names.toString());
+		}
+	}
+
+
+	@Override
+	public void receiveCommand(ChatCommand cmd) {
+		// TODO Auto-generated method stub
+		if (cmd.getClass() == PlanetCommand.class) {
+			addPlanet();
 		}
 	}
 }

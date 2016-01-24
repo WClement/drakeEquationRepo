@@ -25,6 +25,7 @@ public class CommandParser {
 	 */
 	
 	public void parseForCommand(String raw) {
+		raw = raw.toLowerCase();
 		for (CommandEnum e : CommandEnum.values())
 			if (raw.startsWith(e.getPrefix())) {
 				myController.sendCommand(cmdFactory.createCommand(raw.substring(e.getPrefix().length()), e,  e.getMyClass()));

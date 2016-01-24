@@ -16,9 +16,15 @@ public enum CommandEnum {
 	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 	/*~~~~~~~~~Defined Enums~~~~~~~~~*/
 	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-	BUILD ("B:", BuildCommand.class),
-	GENERAL ("G:", GenericCommand.class),
-	PLANET ("P:", PlanetCommand.class);
+	BUILD ("b:", BuildCommand.class),
+	GENERAL ("g:", GenericCommand.class),
+	NAVIGATE ("navigate", NavigateCommand.class),
+	YES1 ("y", BooleanCommand.class),
+	YES2 ("yes", BooleanCommand.class),
+	NO1 ("n", BooleanCommand.class),
+	NO2 ("no", BooleanCommand.class),
+	MENU ("menu", MenuCommand.class),
+	PLANET ("p:", PlanetCommand.class);
 	
 	
 	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

@@ -4,6 +4,7 @@ import gameLogic.GameState;
 
 import java.util.ArrayList;
 
+import model.manager.CelestialObjectManager;
 import model.manager.Manager;
 import controller.Controller;
 import controller.command.ChatCommand;
@@ -25,11 +26,20 @@ public class Model {
 	private Controller myController;
 	private ArrayList<Manager> managers;
 	
+	CelestialObjectManager celestObjMgr;
 	
 	public Model() {
 		// TODO Auto-generated constructor stub
 		modelLoop = new TimedExecutor(this);
+		
+		managers = new ArrayList<Manager>();
+		celestObjMgr = new CelestialObjectManager(theGame);
+		managers.add(celestObjMgr);
+		
+		
 		//modelLoop.start();
+		
+		
 	}
 	
 	/*
@@ -61,7 +71,7 @@ public class Model {
 
 	public void receiveCommand(ChatCommand cmd) {
 		// TODO Auto-generated method stub
-		System.out.println("Model received command: " + cmd.getSuffix());
+		System.out.println("Model.receiveCommand: " + cmd.getClass().toString());
 		
 		switch (cmd.getMyEnum()) {
 
@@ -71,6 +81,16 @@ public class Model {
 		case GENERAL:
 			break;
 		case PLANET:
+			celestObjMgr.addPlanet();
+			break;
+		case NAVIGATE:
+			break;
+		case YES1:
+		case YES2:
+		case NO1:
+		case NO2:
+			break;
+		case MENU:
 			break;
 		default:
 			break;

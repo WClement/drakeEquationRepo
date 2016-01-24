@@ -1,5 +1,6 @@
 package model.manager;
 
+import controller.command.ChatCommand;
 import gameLogic.GameState;
 
 public abstract class Manager {
@@ -13,6 +14,6 @@ public abstract class Manager {
 	
 	public abstract void manage();
 	
-	
+	public abstract void receiveCommand(ChatCommand cmd);
 	
 }

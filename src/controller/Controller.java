@@ -36,7 +36,6 @@ public class Controller implements Runnable {
 	public void run() {
 		while(true) {
 			String cmd = in.nextLine();
-			System.out.println(cmd);
 			cmdParser.parseForCommand(cmd);
 		}
 	}
